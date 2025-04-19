@@ -16,7 +16,7 @@
         <ul class="nav-links">
           <li><a href="#">Home</a></li>
           <li><a href="#">Courses</a></li>
-          <li><a href="#">Login</a></li>
+          <li><a href="#" id="login">Login</a></li>
           <li><a href="#" id="register">Register</a></li>
         </ul>
       </nav>
@@ -25,20 +25,32 @@
 
   <section class="register-form" id="modal">
     <span class="close-btn" id="closeModalBtn">&times;</span>
-    <form action="">
-        <input type="text" placeholder="Enter Name">
-        <input type="email" placeholder="Enter Email">
-        <input type="number" placeholder="Enter phone number">
-        <input type="password" placeholder="Enter Password">
+    <form action="" id="form">
+        <input type="text" placeholder="Enter Name" name="name" id="name">
+        <input type="email" placeholder="Enter Email" name="email" id="email">
+        <input type="number" placeholder="Enter phone number" name="number" id="number">
+        <input type="password" placeholder="Enter Password" name="password" id="password">
         <button type="submit">Register</button>
+        <p class="responseMessage"></p>
     </form>
  </section>
+
+ <section class="login-form" id="login-modal">
+  <span class="close-btn" id="login-modal-close">&times;</span>
+  <form action="" id="login-form">
+      
+      <input type="email" placeholder="Enter Email" name="email" id="user-email">
+      <input type="password" placeholder="Enter Password" name="password" id="user-password">
+      <button type="submit">Login</button>
+      <p class="responseMessage"></p>
+  </form>
+</section>
  
   <section class="hero">
     <div class="hero-content">
       <h1>Learn Anywhere, Anytime!</h1>
       <p>Discover top courses and level up your career with ease.</p>
-      <button onclick="browseCourses()">Browse Courses</button>
+     
     </div>
   </section>
 

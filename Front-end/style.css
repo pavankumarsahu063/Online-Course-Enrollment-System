@@ -50,7 +50,7 @@
   .nav-links a:hover {
     text-decoration: underline;
   }
-  .register-form {
+  .register-form,.login-form {
     display: none;
     background-color: rgb(255, 255, 255);
     padding: 40px 30px;
@@ -62,13 +62,13 @@
     margin: 10px 35%;
   }
   
-  .register-form form {
+  .register-form form,.login-form form {
     display: flex;
     flex-direction: column;
    
   }
   
-  .register-form input {
+  .register-form input ,.login-form input {
     padding: 12px 15px;
     margin-bottom: 20px;
     border: 1px solid #ccc;
@@ -83,7 +83,7 @@
     box-shadow: 0 0 5px rgba(37, 99, 235, 0.3);
   }
   
-  .register-form button {
+  .register-form button , .login-form button {
     padding: 12px;
     background-color: #2563eb;
     color: white;
@@ -95,7 +95,7 @@
     transition: background-color 0.3s;
   }
   
-  .register-form button:hover {
+  .register-form button:hover  {
     background-color: #1e40af;
   }
 

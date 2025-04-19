@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Student Dashboard</title>
+  <link rel="stylesheet" href="dashboard.css" />
+</head>
+<body>
+  <div class="dashboard-container">
+    <aside class="sidebar">
+      <div class="logo">EduEnroll</div>
+      <nav>
+        <ul>
+          <li><a href="#">Dashboard</a></li>
+          <li><a href="#">My Courses</a></li>
+          <li><a href="#">Profile</a></li>
+          <li><a href="#" onclick="logout()">Logout</a></li>
+        </ul>
+      </nav>
+    </aside>
+
+    <main class="main-content">
+      <header>
+        <h2>Welcome, <span id="student-name"></span></h2>
+      </header>
+
+      <section class="student-info">
+        <div class="info-card">
+          <h3>Email:</h3>
+          <p id="student-email"></p>
+        </div>
+        <div class="info-card">
+          <h3>Phone:</h3>
+          <p id="student-phone"></p>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script>
+
+  </script>
+</body>
+</html>
