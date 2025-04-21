@@ -31,6 +31,8 @@ document.addEventListener("DOMContentLoaded", async () => {
     }
 });
 
+
+//Registration
 const form=document.getElementById("form");
 form.addEventListener("submit",async (e)=>{
     e.preventDefault();
@@ -76,3 +78,35 @@ form.addEventListener("submit",async (e)=>{
 })
 
 
+//Login Operation
+
+
+document.getElementById("login-form").addEventListener("click",(e)=>{
+
+    e.preventDefault();
+    const loginData={
+        email:document.getElementById("user-email"),
+        password:document.getElementById("user-password")
+    }
+
+    try{
+            const response=await ("http://localhost:8080/student/login",{
+
+                method:"POST",
+                headers:{
+                    "content-type":"application/json"
+                },
+                body:JSON.stringify(loginData)
+     })
+     if(response.ok){
+        window.location.href="./studentsDashBord.html"
+     }
+     else{
+        messageContent.textContent="Please Enter Valid Data"
+     }
+
+    }
+    catch(e){
+console.log(e);
+    }
+})
