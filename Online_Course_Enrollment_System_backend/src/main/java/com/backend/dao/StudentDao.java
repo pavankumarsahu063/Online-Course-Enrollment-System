@@ -15,7 +15,7 @@ public interface StudentDao {
 	List<Student> getAllStudent();
 	void deleteStudent(String email);
 	Student updateStudent();
-	public Student currentUser(String email,String password);
+	//public Student currentUser(String email,String password);
 	
 
 }

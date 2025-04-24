@@ -53,12 +53,12 @@ public class StudentController {
 		System.out.println(student.getEmail());
 		System.out.println(student.getPassword());
 		
-		Student currentUserStudent=studentService.currentUser(student.getEmail(),passwordEncoder.encode(student.getPassword()));
+		 Student currentUserStudent = studentService.currentUser(student.getEmail());
 		session.setAttribute("student", currentUserStudent);
 		Authentication authentication=authenticationManager.authenticate(
 					new UsernamePasswordAuthenticationToken(student.getEmail(), student.getPassword())
 				);
-		
+		  session.setAttribute("student", currentUserStudent);
 		return ResponseEntity.ok("Login");
 	}
 	

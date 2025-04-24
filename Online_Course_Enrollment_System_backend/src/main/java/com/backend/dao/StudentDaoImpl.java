@@ -60,13 +60,13 @@ public class StudentDaoImpl implements StudentDao{
 		return jdbcTemplate.queryForObject(sql, rowMapper,email);
 	}
 
-	@Override
-	public Student currentUser(String email,String password) {
-		String sql="SELECT * FROM users WHERE email=? AND password=?";
-		RowMapper<Student> rowMapper=new RowMapperImpl();
-		return jdbcTemplate.queryForObject(sql,rowMapper,email,password);
-	}
-	
+//	@Override
+//	public Student currentUser(String email,String password) {
+//		String sql="SELECT * FROM users WHERE email=? AND password=?";
+//		RowMapper<Student> rowMapper=new RowMapperImpl();
+//		return jdbcTemplate.queryForObject(sql,rowMapper,email,password);
+//	}
+//	
 
 
 	

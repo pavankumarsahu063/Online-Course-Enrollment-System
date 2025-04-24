@@ -4,6 +4,7 @@ import java.security.Principal;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import com.backend.config.SecurityConfig;
@@ -38,8 +39,10 @@ public class StudentService {
 	}
 	
 	
-	public Student currentUser(String email,String password) {
-		return studentDao.currentUser(email, password);
+	public Student currentUser(String email) {
+		Student student=studentDao.getStudnt(email);
+		
+		return student;
 	}
 
 }
