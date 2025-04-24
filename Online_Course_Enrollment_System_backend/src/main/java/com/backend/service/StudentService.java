@@ -1,10 +1,12 @@
 package com.backend.service;
 
+import java.security.Principal;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.backend.config.SecurityConfig;
 import com.backend.dao.StudentDao;
 import com.backend.model.Student;
 
@@ -14,9 +16,15 @@ import com.backend.model.Student;
 public class StudentService {
 	@Autowired
 	private StudentDao studentDao;
+	private final SecurityConfig securityConfig;
+	
+	public StudentService(SecurityConfig securityConfig) {
+		this.securityConfig=securityConfig;
+	}
 	
 	
 	public Student saveStudentData(Student student) {
+		student.setPassword(securityConfig.passwordEncoder().encode(student.getPassword()));
 		if(studentDao.saveStudent(student)>0) {
 			return student;
 		}
@@ -25,8 +33,13 @@ public class StudentService {
 		}
 	}
 	
-	public List<Student> getAllstudents(){
-		return studentDao.getAllStudent();
+	public Student getStudentDetails(String email) {
+			return studentDao.getStudnt(email);
+	}
+	
+	
+	public Student currentUser(String email,String password) {
+		return studentDao.currentUser(email, password);
 	}
 
 }

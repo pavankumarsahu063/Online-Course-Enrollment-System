@@ -18,19 +18,6 @@ document.getElementById("login-modal-close").addEventListener("click",()=>{
 
 
 
-// Get all students
-let allStudents = [];
-
-document.addEventListener("DOMContentLoaded", async () => {
-    try {
-        const response = await fetch("http://localhost:8080/student/allstudents");
-        allStudents = await response.json();
-        console.log("All students loaded: ", allStudents);
-    } catch (error) {
-        console.error("Failed to fetch students:", error);
-    }
-});
-
 
 //Registration
 const form=document.getElementById("form");
@@ -81,20 +68,20 @@ form.addEventListener("submit",async (e)=>{
 //Login Operation
 
 
-document.getElementById("login-form").addEventListener("click",(e)=>{
+document.getElementById("login-submit").addEventListener("click",async (e)=>{
 
     e.preventDefault();
     const loginData={
-        email:document.getElementById("user-email"),
-        password:document.getElementById("user-password")
+        email:document.getElementById("user-email").value,
+        password:document.getElementById("user-password").value
     }
-
+console.log(loginData)
     try{
-            const response=await ("http://localhost:8080/student/login",{
+            const response=await fetch("http://localhost:8080/student/login",{
 
                 method:"POST",
                 headers:{
-                    "content-type":"application/json"
+                    "Content-Type": "application/json"
                 },
                 body:JSON.stringify(loginData)
      })
@@ -102,7 +89,8 @@ document.getElementById("login-form").addEventListener("click",(e)=>{
         window.location.href="./studentsDashBord.html"
      }
      else{
-        messageContent.textContent="Please Enter Valid Data"
+        // messageContent.textContent="Please Enter Valid Data"
+        alert("login faield")
      }
 
     }

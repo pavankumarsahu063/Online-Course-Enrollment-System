@@ -12,9 +12,9 @@
       <div class="logo">EduEnroll</div>
       <nav>
         <ul>
-          <li><a href="#">Dashboard</a></li>
-          <li><a href="#">My Courses</a></li>
-          <li><a href="#">Profile</a></li>
+          <li><a href="#" onclick="showSection('dashboard')">Dashboard</a></li>
+          <li><a href="#" onclick="showSection('myCourses')">My Courses</a></li>
+          <li><a href="#"  onclick="showSection('profile') ; loadUser()">Profile</a></li>
           <li><a href="#" onclick="logout()">Logout</a></li>
         </ul>
       </nav>
@@ -25,14 +25,23 @@
         <h2>Welcome, <span id="student-name"></span></h2>
       </header>
 
-      <section class="course-container">
-       
+      <section id="dashboard" class="content-section">
+        <h3>Dashboard Content</h3>
+        <p>This is the dashboard section content.</p>
+      </section>
+
+      <section id="myCourses" class="content-section" style="display:none;">
+        <h3>My Courses</h3>
+        <p>This is the My Courses section content.</p>
+      </section>
+
+      <section id="profile" class="content-section" style="display:none;" >
+        <h3>Profile</h3>
+        <p>This is the Profile section content.</p>
       </section>
     </main>
   </div>
 
-  <script src="studendashbord.js">
-
-  </script>
+  <script src="studendashbord.js"></script>
 </body>
 </html>

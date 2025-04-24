@@ -1,153 +1,124 @@
-/* Reset default styles */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-  
-  /* Body and background */
-  body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: #f7f8fc;
-    color: #444;
-  }
-  
-  /* Dashboard container */
-  .dashboard-container {
-    display: flex;
-    min-height: 100vh;
-    background-color: #fff;
-  }
-  
-  /* Sidebar */
-  .sidebar {
-    width: 260px;
-    background-color: #3498db;
-    color: #fff;
-    padding: 20px 10px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    position: fixed;
-    height: 100%;
-  }
-  
-  .sidebar .logo {
-    font-size: 28px;
-    font-weight: 600;
-    color: #fff;
-    margin-bottom: 30px;
-    text-align: center;
-  }
-  
-  .sidebar nav ul {
-    list-style-type: none;
-    padding: 0;
-    width: 100%;
-  }
-  
-  .sidebar nav ul li {
-    margin: 20px 0;
-  }
-  
-  .sidebar nav ul li a {
-    color: #fff;
-    text-decoration: none;
-    font-size: 18px;
-    padding: 12px;
-    text-align: center;
-    display: block;
-    border-radius: 5px;
-    transition: background-color 0.3s, padding-left 0.3s;
-  }
-  
-  .sidebar nav ul li a:hover {
-    background-color: #2980b9;
-    padding-left: 20px;
-  }
-  
-  /* Main content */
-  .main-content {
-    margin-left: 260px;
-    padding: 20px;
-    width: 100%;
-    background-color: #f9f9f9;
-  }
-  
-  /* Header */
-  header {
-    padding: 10px;
-    margin-bottom: 20px;
-  }
-  
-  header h2 {
-    font-size: 26px;
-    font-weight: 500;
-    color: #2c3e50;
-  }
-  
-  header #student-name {
-    color: #2980b9;
-  }
-  
-  /* Course container */
-  .course-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-    gap: 20px;
-    padding: 20px;
-  }
-  
-  .course {
-    background-color: #fff;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s, box-shadow 0.3s;
-  }
-  
-  .course:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
-  }
-  
-  .course h1 {
-    font-size: 20px;
-    font-weight: 600;
-    color: #2980b9;
-    margin-bottom: 10px;
-  }
-  
-  .course p {
-    font-size: 16px;
-    color: #7f8c8d;
-    margin-bottom: 10px;
-  }
-  
-  .course button {
-    background-color: #3498db;
-    color: #fff;
-    border: none;
-    padding: 10px 20px;
-    font-size: 16px;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-  }
-  
-  .course button:hover {
-    background-color: #2980b9;
-  }
-  
-  /* Logout button in sidebar */
-  .sidebar nav ul li a[onclick="logout()"] {
-    background-color: #e74c3c;
-    border-radius: 5px;
-    padding: 12px;
-    margin-top: auto;
-  }
-  
-  .sidebar nav ul li a[onclick="logout()"]:hover {
-    background-color: #c0392b;
-  }
-  
+
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f4f6f8;
+  color: #333;
+}
+
+.dashboard-container {
+  display: flex;
+  height: 100vh;
+}
+
+.sidebar {
+  width: 220px;
+  background-color: #2c3e50;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+}
+
+.logo {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 40px;
+  text-align: center;
+}
+
+.sidebar nav ul {
+  list-style: none;
+  padding: 0;
+}
+
+.sidebar nav ul li {
+  padding: 15px 10px;
+  margin: 10px 0;
+  cursor: pointer;
+  border-radius: 8px;
+  transition: background-color 0.3s;
+}
+
+.sidebar nav ul li:hover {
+  background-color: #34495e;
+}
+
+.sidebar nav ul li a {
+  color: white;
+  text-decoration: none;
+}
+
+.main-content {
+  flex-grow: 1;
+  padding: 30px;
+  background-color: #ecf0f1;
+  overflow-y: auto;
+}
+
+header h2 {
+  font-size: 28px;
+  margin-bottom: 20px;
+}
+
+.content-section {
+  margin-top: 20px;
+}
+
+.course {
+  background-color: white;
+  padding: 20px;
+  margin: 15px 0;
+  border-radius: 10px;
+  box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.course h1 {
+  margin: 0;
+  font-size: 20px;
+}
+
+.course p {
+  font-size: 14px;
+  margin-top: 5px;
+}
+
+.buy-btn {
+  background-color: #3498db;
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  margin-top: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.buy-btn:hover {
+  background-color: #2980b9;
+}
+
+/* Profile Styling */
+.profile-div {
+  background-color: white;
+  padding: 25px;
+  border-radius: 10px;
+  box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.profile-div h1 {
+  font-size: 20px;
+  margin-bottom: 15px;
+}
+
+.profile-div button {
+  padding: 8px 16px;
+  background-color: #2ecc71;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.profile-div button:hover {
+  background-color: #27ae60;
+}
